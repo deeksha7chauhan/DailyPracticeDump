@@ -1,0 +1,231 @@
+deechauhan7@IMS-9232ND3:~$ chmod u+x bash.sh
+deechauhan7@IMS-9232ND3:~$ echo "help me" `date`
+help me Wed Mar 26 22:06:05 PDT 2025
+deechauhan7@IMS-9232ND3:~$ vi bash.sh
+deechauhan7@IMS-9232ND3:~$ vi bash.sh
+deechauhan7@IMS-9232ND3:~$ chmod u+x bash.s
+chmod: cannot access 'bash.s': No such file or directory
+deechauhan7@IMS-9232ND3:~$ chmod u+x bash.sh
+deechauhan7@IMS-9232ND3:~$ sh  bash.sh
+help me Wed Mar 26 22:07:02 PDT 2025
+deechauhan7@IMS-9232ND3:~$ while read line
+> do
+>   echo $line
+> done < input.txt
+-bash: input.txt: No such file or directory
+deechauhan7@IMS-9232ND3:~$ touch input.txt
+deechauhan7@IMS-9232ND3:~$ while read line; do   echo $line; done < input.txt
+deechauhan7@IMS-9232ND3:~$ vi bat.sh
+deechauhan7@IMS-9232ND3:~$ sh bat.sh
+bat.sh: 3: Syntax error: "do" unexpected
+deechauhan7@IMS-9232ND3:~$ sh bat.sh
+bat.sh: 3: Syntax error: "do" unexpected
+deechauhan7@IMS-9232ND3:~$ cat bash.sh
+#!/bin/bash
+echo "help me" `date`
+
+deechauhan7@IMS-9232ND3:~$ cat bat.sh
+#!/bin/bash
+i=1
+while[[ $i -le 10 ]]; do
+        echo '$i'
+        ((i +=1))
+done
+deechauhan7@IMS-9232ND3:~$ sh bat.sh
+bat.sh: 3: Syntax error: "do" unexpected
+deechauhan7@IMS-9232ND3:~$ vi bat.sh
+deechauhan7@IMS-9232ND3:~$ sh bat.sh
+bat.sh: 3: Syntax error: "do" unexpected
+deechauhan7@IMS-9232ND3:~$ vi bat.sh
+deechauhan7@IMS-9232ND3:~$ sh bat.sh
+bat.sh: 3: [[: not found
+deechauhan7@IMS-9232ND3:~$ vi bat.sh
+deechauhan7@IMS-9232ND3:~$ sh bat.sh
+bat.sh: 3: [[: not found
+deechauhan7@IMS-9232ND3:~$ vi file.tx
+deechauhan7@IMS-9232ND3:~$ rm -rf file.tx
+deechauhan7@IMS-9232ND3:~$ vi file.txt
+deechauhan7@IMS-9232ND3:~$ awk '{print}' file.txt
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk  file.txt
+awk: cmd. line:1: file.txt
+awk: cmd. line:1:     ^ syntax error
+deechauhan7@IMS-9232ND3:~$ awk file.txt
+awk: cmd. line:1: file.txt
+awk: cmd. line:1:     ^ syntax error
+deechauhan7@IMS-9232ND3:~$ awk '/manager/ {print}' file.txt
+ajay manager account 45000
+varun manager sales 50000
+amit manager account 47000
+deechauhan7@IMS-9232ND3:~$ awk '{print $1, $4wq}' file.txt
+ajay 45000
+sunil 25000
+varun 50000
+amit 47000
+tarun 15000
+deepak 23000
+sunil 13000
+satvik 80000
+deechauhan7@IMS-9232ND3:~$ awk '{print $0'} file.txt
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk '{printNR, $0'} file.txt
+awk: cmd. line:1: {printNR, $0}
+awk: cmd. line:1:         ^ syntax error
+deechauhan7@IMS-9232ND3:~$ awk '{print NR $0'} file.txt
+1ajay manager account 45000
+2sunil clerk account 25000
+3varun manager sales 50000
+4amit manager account 47000
+5tarun peon sales 15000
+6deepak clerk sales 23000
+7sunil peon sales 13000
+8satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk '{print NR,$0'} file.txt
+1 ajay manager account 45000
+2 sunil clerk account 25000
+3 varun manager sales 50000
+4 amit manager account 47000
+5 tarun peon sales 15000
+6 deepak clerk sales 23000
+7 sunil peon sales 13000
+8 satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk '{print NR $0'} file.txt
+1ajay manager account 45000
+2sunil clerk account 25000
+3varun manager sales 50000
+4amit manager account 47000
+5tarun peon sales 15000
+6deepak clerk sales 23000
+7sunil peon sales 13000
+8satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk '{print NR, $0'} file.txt
+1 ajay manager account 45000
+2 sunil clerk account 25000
+3 varun manager sales 50000
+4 amit manager account 47000
+5 tarun peon sales 15000
+6 deepak clerk sales 23000
+7 sunil peon sales 13000
+8 satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk '{print NS, $0'} file.txt
+ ajay manager account 45000
+ sunil clerk account 25000
+ varun manager sales 50000
+ amit manager account 47000
+ tarun peon sales 15000
+ deepak clerk sales 23000
+ sunil peon sales 13000
+ satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk '{print NF, $0'} file.txt
+4 ajay manager account 45000
+4 sunil clerk account 25000
+4 varun manager sales 50000
+4 amit manager account 47000
+4 tarun peon sales 15000
+4 deepak clerk sales 23000
+4 sunil peon sales 13000
+4 satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ awk '{print $1,$NF'} file.txt
+ajay 45000
+sunil 25000
+varun 50000
+amit 47000
+tarun 15000
+deepak 23000
+sunil 13000
+satvik 80000
+deechauhan7@IMS-9232ND3:~$ awk 'NR==3, NR==6 {print NR, $0}' file.txt
+3 varun manager sales 50000
+4 amit manager account 47000
+5 tarun peon sales 15000
+6 deepak clerk sales 23000
+deechauhan7@IMS-9232ND3:~$ vi temp.txt
+deechauhan7@IMS-9232ND3:~$ awk '{print NR "- " $1}' temp.txt
+1- A
+2- Tarun
+3- Man
+4- Praveen
+deechauhan7@IMS-9232ND3:~$ awk 'NF < 0' temp.txt
+deechauhan7@IMS-9232ND3:~$ awk 'NF = 0' temp.txt
+deechauhan7@IMS-9232ND3:~$ awk 'NF == 0' temp.txt
+deechauhan7@IMS-9232ND3:~$ awk 'NF == 0 {print NR}' temp.txt
+deechauhan7@IMS-9232ND3:~$ awk 'NF <= 0 {print NR}' temp.txt
+deechauhan7@IMS-9232ND3:~$ awk '{if(length($0) >max) max = length($0)} END {print max}' temp.txt
+19
+deechauhan7@IMS-9232ND3:~$ awk 'END {print NR}' temp.txt
+4
+deechauhan7@IMS-9232ND3:~$ awk 'length($0) >10' temp.txt
+A    B    C
+Tarun    A12    1
+Man    B6    2
+Praveen    M42    3
+deechauhan7@IMS-9232ND3:~$ awk 'length($0) > 10' temp.txt
+A    B    C
+Tarun    A12    1
+Man    B6    2
+Praveen    M42    3
+deechauhan7@IMS-9232ND3:~$ awk '{ if($3 =='B6') print $0;}' temp.txt
+deechauhan7@IMS-9232ND3:~$ awk '{print NR}' temp.txt
+1
+2
+3
+4
+deechauhan7@IMS-9232ND3:~$ awk 'BEGIN {for (i =1; i<=6; i++) print 'Sq of", i, "is', i*i}'
+awk: cmd. line:1: BEGIN {for (i =1; i<=6; i++) print Sq
+awk: cmd. line:1:                                      ^ unexpected newline or end of string
+deechauhan7@IMS-9232ND3:~$ awk 'BEGIN {for (i =1; i<=6; i++) print "Square of", i, "is', i*i}'
+> 5
+> ^C
+deechauhan7@IMS-9232ND3:~$ awk 'BEGIN {for (i =1; i<=6; i++) print "Square of", i, "is", i*i}'
+5
+Square of 1 is 1
+Square of 2 is 4
+Square of 3 is 9
+Square of 4 is 16
+Square of 5 is 25
+Square of 6 is 36
+5: command not found
+deechauhan7@IMS-9232ND3:~$ awk 'BEGIN {for (i =1; i<=6; i++) print "Square of", i, "is", i*i}'
+Square of 1 is 1
+Square of 2 is 4
+Square of 3 is 9
+Square of 4 is 16
+Square of 5 is 25
+Square of 6 is 36
+deechauhan7@IMS-9232ND3:~$ cat temp.txt
+A    B    C
+Tarun    A12    1
+Man    B6    2
+Praveen    M42    3
+deechauhan7@IMS-9232ND3:~$ cat file.txt
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000
+deechauhan7@IMS-9232ND3:~$ vi file.txt
+deechauhan7@IMS-9232ND3:~$ sed -n '/ERROR/s/ERROR/WARNING/p' file.txt
+deechauhan7@IMS-9232ND3:~$ sed -n '/ERROR/s/ERROR/WARNING/p' file.txt
+deechauhan7@IMS-9232ND3:~$ vi file.txt
+deechauhan7@IMS-9232ND3:~$ sed -n '/ERROR/s/ERROR/WARNING/p' file.txt
+satvik director WARNING 80000
+deechauhan7@IMS-9232ND3:~$ awk '/ERROR/ {gsub(/WARNING/, "ERROR"); print}' file.txt
+satvik director ERROR 80000
+deechauhan7@IMS-9232ND3:~$
