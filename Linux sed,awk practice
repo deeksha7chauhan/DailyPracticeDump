@@ -229,3 +229,7 @@ satvik director WARNING 80000
 deechauhan7@IMS-9232ND3:~$ awk '/ERROR/ {gsub(/WARNING/, "ERROR"); print}' file.txt
 satvik director ERROR 80000
 deechauhan7@IMS-9232ND3:~$
+deechauhan7@IMS-9232ND3:~$ echo "Hello My World Of Fun Team" | sed 's/\(\b[A-Z]\)/\(\1\)/g'
+(H)ello (M)y (W)orld (O)f (F)un (T)eam
+$ sed '3,6d' filename.txt #delete lines from 3 to 6.
+$sed '2,$ s/unix/linux/' geekfile.txt #$ shows the last line. means 3 to last line in file.
